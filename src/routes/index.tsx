@@ -79,7 +79,7 @@ function estaAtrasada(t: Tarefa): boolean {
 function formatarPrazo(prazo: string): string {
   if (!prazo) return "";
   const [y, m, d] = prazo.split("-").map(Number);
-  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("pt-BR", {
+  return new Date(Date.UTC(y, (m ?? 1) - 1, d ?? 1)).toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "short",
     timeZone: "UTC",
