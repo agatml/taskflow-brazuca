@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Architecture
+- TaskFlow is a single-route app (src/routes/index.tsx) persisted in localStorage only; no backend by user request. Do not add routes or a database without asking.
