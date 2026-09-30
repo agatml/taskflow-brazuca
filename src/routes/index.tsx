@@ -130,10 +130,11 @@ function Index() {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [prioridade, setPrioridade] = useState<Prioridade>("media");
-  const [categoria, setCategoria] = useState<Categoria>("Trabalho");
+  const [categoria, setCategoria] = useState<Categoria>("Pessoal" as Categoria);
   const [prazo, setPrazo] = useState("");
   const [editandoId, setEditandoId] = useState<string | null>(null);
   const [erroTitulo, setErroTitulo] = useState(false);
+  const [confirmarLimpar, setConfirmarLimpar] = useState(false);
 
   // Filtros
   const [busca, setBusca] = useState("");
