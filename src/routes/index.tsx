@@ -279,7 +279,7 @@ function Index() {
         {/* Resumo */}
         <section aria-label="Resumo de tarefas" className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <CardResumo icone={<ClipboardList className="size-4" />} label="Total" valor={resumo.total} />
-          <CardResumo icone={<Loader2 className="size-4" />} label="Pendentes" valor={resumo.pendentes} />
+          <CardResumo icone={<Clock className="size-4" />} label="Pendentes" valor={resumo.pendentes} />
           <CardResumo icone={<CheckCheck className="size-4" />} label="Concluídas" valor={resumo.concluidas} />
           <CardResumo
             icone={<AlarmClock className="size-4" />}
@@ -625,7 +625,7 @@ function ItemTarefa({
               : "border-border hover:border-primary",
           )}
         >
-          {tarefa.concluida && <CheckCheck className="size-4" aria-hidden="true" />}
+          {tarefa.concluida && <Check className="size-4" aria-hidden="true" />}
         </button>
 
         <div className="min-w-0 flex-1">
@@ -646,7 +646,7 @@ function ItemTarefa({
               {tarefa.categoria}
             </span>
             {atrasada && (
-              <span className="rounded-full bg-overdue px-2 py-0.5 text-[11px] font-bold text-white dark:text-card-foreground">
+              <span className="rounded-full bg-overdue px-2 py-0.5 text-[11px] font-bold text-overdue-foreground">
                 Atrasada
               </span>
             )}
