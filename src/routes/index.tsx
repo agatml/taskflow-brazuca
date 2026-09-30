@@ -162,6 +162,13 @@ function Index() {
     if (pronto) localStorage.setItem(TEMA_KEY, tema);
   }, [tema, pronto]);
 
+  function alternarTema() {
+    const novoTema = tema === "dark" ? "light" : "dark";
+    document.documentElement.classList.toggle("dark", novoTema === "dark");
+    localStorage.setItem(TEMA_KEY, novoTema);
+    setTema(novoTema);
+  }
+
   function limparForm() {
     setTitulo("");
     setDescricao("");
@@ -268,7 +275,7 @@ function Index() {
           </div>
           <button
             type="button"
-            onClick={() => setTema(tema === "dark" ? "light" : "dark")}
+            onClick={alternarTema}
             aria-label={tema === "dark" ? "Mudar para modo claro" : "Mudar para modo escuro"}
             className="flex size-10 items-center justify-center rounded-xl border bg-card text-foreground shadow-card transition-colors hover:bg-accent hover:text-accent-foreground"
           >
