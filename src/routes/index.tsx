@@ -230,11 +230,17 @@ function Index() {
     if (editandoId === id) limparForm();
   }
 
+  function limparConcluidas() {
+    setTarefas((prev) => prev.filter((t) => !t.concluida));
+    setConfirmarLimpar(false);
+  }
+
   const resumo = useMemo(() => {
     const pendentes = tarefas.filter((t) => !t.concluida).length;
     const concluidas = tarefas.length - pendentes;
     const atrasadas = tarefas.filter(estaAtrasada).length;
-    return { total: tarefas.length, pendentes, concluidas, atrasadas };
+    const percentual = tarefas.length === 0 ? 0 : Math.round((concluidas / tarefas.length) * 100);
+    return { total: tarefas.length, pendentes, concluidas, atrasadas, percentual };
   }, [tarefas]);
 
   const filtradas = useMemo(() => {
