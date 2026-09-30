@@ -303,6 +303,45 @@ function Index() {
           />
         </section>
 
+        {/* Progresso e limpar concluídas */}
+        <section
+          aria-label="Progresso de conclusão"
+          className="mt-3 rounded-2xl border bg-card p-4 shadow-card"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm font-semibold">
+              <span className="font-display tabular-nums text-base font-bold text-primary">
+                {resumo.percentual}%
+              </span>{" "}
+              concluído
+              <span className="ml-1.5 font-normal text-muted-foreground">
+                ({resumo.concluidas} de {resumo.total})
+              </span>
+            </p>
+            <button
+              type="button"
+              onClick={() => setConfirmarLimpar(true)}
+              disabled={resumo.concluidas === 0}
+              className="flex items-center gap-1.5 rounded-xl border border-overdue-border bg-overdue-bg px-3 py-2 text-xs font-semibold text-overdue transition-all hover:brightness-105 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40 sm:text-sm"
+            >
+              <Trash2 className="size-4" aria-hidden="true" /> Limpar concluídas
+            </button>
+          </div>
+          <div
+            role="progressbar"
+            aria-label="Percentual de tarefas concluídas"
+            aria-valuenow={resumo.percentual}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            className="mt-3 h-2.5 w-full overflow-hidden rounded-full bg-secondary"
+          >
+            <div
+              className="h-full rounded-full bg-primary transition-[width] duration-500 ease-out"
+              style={{ width: `${resumo.percentual}%` }}
+            />
+          </div>
+        </section>
+
         {/* Formulário */}
         <section aria-label={editandoId ? "Editar tarefa" : "Nova tarefa"} className="mt-6">
           <form
@@ -544,6 +583,46 @@ function Index() {
           TaskFlow · suas tarefas ficam salvas neste navegador
         </footer>
       </div>
+
+      {confirmarLimpar && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/60 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="titulo-confirmar-limpar"
+        >
+          <div className="w-full max-w-sm rounded-2xl border bg-card p-5 shadow-pop">
+            <h3 id="titulo-confirmar-limpar" className="font-display text-base font-bold">
+              Limpar tarefas concluídas?
+            </h3>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+              Isso removerá{" "}
+              <span className="font-semibold text-foreground">
+                {resumo.concluidas === 1
+                  ? "1 tarefa concluída"
+                  : `${resumo.concluidas} tarefas concluídas`}
+              </span>{" "}
+              permanentemente. Essa ação não pode ser desfeita.
+            </p>
+            <div className="mt-4 flex justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setConfirmarLimpar(false)}
+                className="rounded-xl border border-input bg-background px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-accent"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                onClick={limparConcluidas}
+                className="rounded-xl bg-destructive px-4 py-2 text-sm font-semibold text-destructive-foreground transition-all hover:brightness-110 active:scale-[0.98]"
+              >
+                Remover
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
