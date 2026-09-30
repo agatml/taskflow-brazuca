@@ -51,6 +51,7 @@
   --color-overdue: var(--overdue);
   --color-overdue-bg: var(--overdue-bg);
   --color-overdue-border: var(--overdue-border);
+  --color-overdue-foreground: var(--overdue-foreground);
 
   /* Category tints */
   --color-cat-trabalho: var(--cat-trabalho);
