@@ -1,58 +1,69 @@
-# Tarefa Fácil
+# TaskFlow — Gerenciador de Tarefas
 
-Crie um app web de gerenciamento de tarefas chamado "TaskFlow", em português do Brasil.
+Aplicação web para organizar tarefas com **prioridade, categoria e prazo**, com painel de resumo e dados salvos no próprio navegador.
 
-FUNCIONALIDADES:
+**🔗 Demo:** `[ADICIONAR_LINK_PUBLICADO_AQUI](https://taskflow-brazuca.lovable.app)`
 
-- Adicionar tarefa com: título (obrigatório), descrição (opcional), prioridade (baixa, média, alta), categoria (Trabalho, Estudos, Pessoal) e data de prazo.
+> Projeto de estudo, criado com **Lovable** como primeiro contato com desenvolvimento assistido por IA (vibe coding).
 
-- Marcar tarefa como concluída, editar e excluir.
+---
 
-- Filtros por status (todas, pendentes, concluídas), por prioridade e por categoria, além de busca por texto no título.
+## ✨ Funcionalidades
 
-- Painel de resumo no topo com cards: total de tarefas, pendentes, concluídas e atrasadas (prazo vencido e não concluídas).
+- Adicionar, editar, concluir e excluir tarefas
+- Campos: título, descrição (opcional), prioridade (baixa, média, alta), categoria (Trabalho, Estudos, Pessoal) e prazo
+- Filtros por status, prioridade e categoria, além de busca por título
+- Painel de resumo: total, pendentes, concluídas e atrasadas
+- Tarefas atrasadas destacadas em vermelho
+- Barra de progresso com a porcentagem de tarefas concluídas
+- Botão "Limpar concluídas" com confirmação
+- Modo claro e escuro
+- Layout responsivo (desktop e celular)
+- Dados persistidos no `localStorage` (sem backend)
 
-- Tarefas atrasadas devem aparecer destacadas em vermelho.
+## 🖼️ Telas
 
-- Salvar os dados no localStorage para que persistam ao recarregar a página.
+> Adicione prints em `docs/img/` e referencie aqui.
 
-DESIGN:
+![TaskFlow](docs/img/taskflow.png)
 
-- Visual limpo e moderno, cor principal azul, cantos arredondados, boa espaçamento.
+## 🛠️ Tecnologias
 
-- Prioridade representada por badges coloridos (verde, amarelo, vermelho).
+- **Lovable** — geração e ajustes por prompts
+- **React + TypeScript + Tailwind CSS** — stack gerada pelo Lovable *(confirmar no `package.json`)*
+- **localStorage** — persistência dos dados no navegador
+- **GitHub** — controle de versão
 
-- Totalmente responsivo, funcionando bem no celular.
+## ▶️ Como rodar localmente
 
-- Botão para alternar entre modo claro e escuro.
-
-REGRAS:
-
-- Não use backend nem login neste momento.
-
-- Página única, sem rotas adicionais.
-
-- Mostre uma mensagem amigável quando não houver tarefas.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://taskflow-brazuca.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/fb62b092-d625-5372-a93a-cd67c3e71dfe).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+git clone URL_DO_REPOSITORIO
+cd NOME_DA_PASTA
+npm install
 npm run dev
 ```
+
+---
+
+## 🧠 Processo de desenvolvimento
+
+Construído em ciclos de **prompt → teste → correção**:
+
+| Etapa | O que foi feito | Problema encontrado | Solução |
+|---|---|---|---|
+| 1 | Prompt inicial com funcionalidades, design e regras | — | — |
+| 2 | Correção em lote | Barra branca ao abrir seletores; tela piscando ao trocar o tema; pouco contraste entre claro e escuro | Prompt único com os 3 ajustes e paleta de cores definida |
+| 3 | Novos recursos | — | Barra de progresso e botão "Limpar concluídas" |
+
+### Aprendizados
+
+- Prompts bem estruturados (funcionalidades, design e regras separados) geram resultados melhores.
+- Testar tudo antes de pedir ajustes permite agrupar correções e economizar créditos.
+- Definir cores em hexadecimal evita resultados genéricos no design.
+- Instruir "não alterar o que já funciona" protege o restante do app.
+
+---
+
+## 📄 Licença
+
+Projeto de estudo, sem fins comerciais.
