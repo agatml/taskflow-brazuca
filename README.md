@@ -23,9 +23,8 @@ Aplicação web para organizar tarefas com **prioridade, categoria e prazo**, co
 
 ## 🖼️ Telas
 
-> Adicione prints em `docs/img/` e referencie aqui.
-
-![TaskFlow](docs/img/taskflow.png)
+![TaskFlow](docs/img/taskflow1.png)
+![TaskFlow](docs/img/taskflow2.png)
 
 ## 🛠️ Tecnologias
 
