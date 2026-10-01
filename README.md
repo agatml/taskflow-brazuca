@@ -2,7 +2,7 @@
 
 Aplicação web para organizar tarefas com **prioridade, categoria e prazo**, com painel de resumo e dados salvos no próprio navegador.
 
-**🔗 Demo:** `[ADICIONAR_LINK_PUBLICADO_AQUI](https://taskflow-brazuca.lovable.app)`
+**🔗 Demo:** `https://taskflow-brazuca.lovable.app`
 
 > Projeto de estudo, criado com **Lovable** como primeiro contato com desenvolvimento assistido por IA (vibe coding).
 
@@ -30,7 +30,7 @@ Aplicação web para organizar tarefas com **prioridade, categoria e prazo**, co
 ## 🛠️ Tecnologias
 
 - **Lovable** — geração e ajustes por prompts
-- **React + TypeScript + Tailwind CSS** — stack gerada pelo Lovable *(confirmar no `package.json`)*
+- **React + TypeScript + Tailwind CSS** — stack gerada pelo Lovable 
 - **localStorage** — persistência dos dados no navegador
 - **GitHub** — controle de versão
 
