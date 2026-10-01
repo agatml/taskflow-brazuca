@@ -212,6 +212,45 @@
   ::selection {
     background-color: color-mix(in oklab, var(--primary) 25%, transparent);
   }
+
+  /* Regras globais de cursor (aplicadas via CSS base, não por componente) */
+  * {
+    cursor: default;
+  }
+
+  button:not(:disabled),
+  a,
+  select:not(:disabled),
+  label:has(> input:not(:disabled)),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="tab"],
+  [role="menuitem"],
+  [role="option"],
+  [role="combobox"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
+  input[type="text"],
+  input:not([type]),
+  input[type="search"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  textarea,
+  [contenteditable="true"] {
+    cursor: text;
+  }
+
+  :disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
 }
 
 @layer utilities {
